@@ -1,0 +1,21 @@
+@host = localhost
+@port = 3333
+@baseUrl = http://{{host}}:{{port}}
+
+### Monitoramento e Saúde
+# Verifica o status de saúde da aplicação
+GET {{baseUrl}}/health
+
+### Gerenciamento de Salas
+# Lista todas as salas disponíveis
+
+GET {{baseUrl}}/rooms
+
+### Create room
+POST {{baseUrl}}/rooms
+Content-Type: application/json
+
+{
+ "name": "Sala de teste",
+ "description": "Essa é uma sala de teste"
+}
